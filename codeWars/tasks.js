@@ -1,3 +1,67 @@
+// Convert an array of strings to array of numbers
+
+function toNumberArray(stringarray) {
+  return stringarray.map((item) => +item);
+}
+
+// pick a set of first elements
+
+function first(arr, n) {
+  if (n === 0) {
+    return [];
+  }
+  return arr.filter((item, index) => {
+    if (index < n) {
+      return item;
+    } else if (!index) {
+      return arr[0];
+    }
+  });
+}
+
+// Power
+
+const numberToPower = (number, power) => {
+  let res = 1;
+  for (let i = 0; i < power; i++) {
+    res *= number;
+  }
+  return res;
+};
+
+// Sum even numbers
+
+function sumEvenNumbers(input) {
+  return input
+    .filter((item) => item % 2 === 0)
+    .reduce((prev, value) => prev + value, 0);
+}
+
+// Exes and Ohs
+
+function XO(str) {
+  const newStrInArr = str.toLowerCase().split("");
+  let x = [];
+  let o = [];
+
+  newStrInArr.filter((item) => {
+    if (item === "x") {
+      x.push(item);
+    }
+    if (item === "o") {
+      o.push(item);
+    }
+  });
+
+  return x.length === o.length;
+}
+
+// You only need one - Beginner
+
+function check(a, x) {
+  return a.includes(x);
+}
+
 // Volume of a Cuboid
 
 class Kata {
